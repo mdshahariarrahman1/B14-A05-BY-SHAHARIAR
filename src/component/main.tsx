@@ -12,7 +12,7 @@ const Main = ({ DavStack }: DavPromiseType) => {
 
   return (
     <>
-    <div className="container mx-auto grid grid-cols-12 gap-5">
+    <div className="container mx-auto grid grid-cols-12 gap-5 mb-22">
       <div className="  col-span-9 grid grid-cols-3 gap-5">
         {davStack.map((dav) => {
           return <MainCard key={dav.id} dav={dav} />;

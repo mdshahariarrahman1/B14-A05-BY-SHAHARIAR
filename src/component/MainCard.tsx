@@ -7,7 +7,56 @@ interface DavCardType {
 const MainCard = ({ dav }: DavCardType) => {
   return (
     <>
-      
+      <div className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        {/* Icon + Badge */}
+        <div className="mb-5 flex items-start justify-between">
+          <div className="flex h-10 w-10 items-center justify-center">
+            <img
+              src={dav.icon}
+              alt={dav.name}
+              className="h-8 w-8 object-contain"
+            />
+          </div>
+
+          <span className="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-medium text-blue-500">
+            {dav.badge}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3 className="mb-2 text-xl font-bold text-slate-900">
+          {dav.name}
+        </h3>
+
+        {/* Description */}
+        <p className="min-h-18 text-sm leading-6 text-slate-500">
+          {dav.description}
+        </p>
+
+        {/* Divider */}
+        <div className="my-4 border-t border-slate-100"></div>
+
+        {/* Information */}
+        <div className="mb-5 flex items-center justify-between gap-2 text-xs">
+          <span className="rounded-md bg-slate-50 px-2 py-1 font-medium text-slate-600">
+            {dav.category}
+          </span>
+
+          <span className="text-slate-500">{dav.difficulty}</span>
+
+          <span className="flex items-center gap-1 font-medium text-slate-700">
+            <span className="text-amber-400">★</span>
+            {dav.rating}
+          </span>
+        </div>
+
+        {/* Button */}
+        <button
+          className="mt-auto w-full rounded-lg bg-[#080d1d] py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+        >
+          Add to Stack
+        </button>
+      </div>
     </>
   );
 };
