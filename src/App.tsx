@@ -2,6 +2,7 @@ import { Suspense, useState } from "react";
 import NavAndHeroSection from "./component/navAndHeroSection"
 import Main from "./component/main";
 import type { DavType } from "./davStackType";
+import Footer from "./component/Footer";
 
 
 
@@ -25,6 +26,8 @@ function App() {
       <Suspense fallback={<p className=" text-5xl font-bold text-center">loading...</p>}>
       <Main DavStack={DavStack} />
       </Suspense>
+
+      <Footer/>
     </>
   )
 }
