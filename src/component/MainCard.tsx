@@ -1,26 +1,31 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import type { DavType } from "../davStackType";
-
 
 interface DavCardType {
   dav: DavType;
-  davStackSelected:DavType[];
-  setdavStackSelected:Dispatch<SetStateAction<DavType[]>>
-
+  davStackSelected: DavType[];
+  setdavStackSelected: Dispatch<SetStateAction<DavType[]>>;
 }
 
-const MainCard = ({ dav, davStackSelected, setdavStackSelected }: DavCardType) => {
+const MainCard = ({
+  dav,
+  davStackSelected,
+  setdavStackSelected,
+}: DavCardType) => {
 
-  const [isSelected, setIsSelected] = useState(false)
+  const selected = davStackSelected.filter((item) => item.id === dav.id);
 
-  const handelSelected = () =>{
-    setdavStackSelected([...davStackSelected, dav])
-    setIsSelected(true)
-  }
+  const isSelected = selected.length > 0;
+
+  const handelSelected = () => {
+    setdavStackSelected([...davStackSelected, dav]);
+  };
 
   return (
     <>
-      <div className={`flex ${isSelected === true ? "border border-pink-400 shadow shadow-pink-300" : ""} h-full flex-col rounded-2xl border border-[#F1F5F9] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}>
+      <div
+        className={`flex ${isSelected === true ? "border border-pink-400 shadow shadow-pink-300" : ""} h-full flex-col rounded-2xl border border-[#F1F5F9] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg`}
+      >
         {/* Icon + Badge */}
         <div className="mb-5 flex items-start justify-between">
           <div className="flex h-10 w-10 items-center justify-center">
@@ -37,9 +42,7 @@ const MainCard = ({ dav, davStackSelected, setdavStackSelected }: DavCardType) =
         </div>
 
         {/* Title */}
-        <h3 className="mb-2 text-xl font-bold text-slate-900">
-          {dav.name}
-        </h3>
+        <h3 className="mb-2 text-xl font-bold text-slate-900">{dav.name}</h3>
 
         {/* Description */}
         <p className="min-h-18 text-sm leading-6 text-slate-500">
@@ -67,8 +70,15 @@ const MainCard = ({ dav, davStackSelected, setdavStackSelected }: DavCardType) =
         <button
           onClick={handelSelected}
           className={`mt-auto w-full rounded-lg ${isSelected === true ? "bg-pink-200 border text-pink-500 font-bold" : "text-[#FFFFFF]"} bg-[#080d1d] py-3 text-sm font-medium transition `}
-          disabled={isSelected === true ? true : false}>
-          {isSelected ? <><i className="fa-solid fa-check"></i> Add to Stack</> : "Add to Stack"}
+          disabled={isSelected === true ? true : false}
+        >
+          {isSelected ? (
+            <>
+              <i className="fa-solid fa-check"></i> Add to Stack
+            </>
+          ) : (
+            "Add to Stack"
+          )}
         </button>
       </div>
     </>

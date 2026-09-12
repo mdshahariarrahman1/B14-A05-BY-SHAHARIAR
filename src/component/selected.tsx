@@ -63,7 +63,7 @@ const Selected = ({ davStackSelected, setdavStackSelected }: SelectedType) => {
                 <div className=" pr-2.5">
                   <button
                     onClick={() => handelRemover(dav.id)}
-                    className="text-red-500 hover:text-pink-500"
+                    className=" cursor-pointer text-red-500 hover:text-pink-500"
                   >
                     <IoCloseSharp className=" text-3xl" />
                   </button>
