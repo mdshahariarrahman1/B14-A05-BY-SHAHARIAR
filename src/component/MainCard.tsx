@@ -7,7 +7,7 @@ interface DavCardType {
 const MainCard = ({ dav }: DavCardType) => {
   return (
     <>
-      <div className="flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+      <div className="flex h-full flex-col rounded-2xl border border-[#F1F5F9] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
         {/* Icon + Badge */}
         <div className="mb-5 flex items-start justify-between">
           <div className="flex h-10 w-10 items-center justify-center">
