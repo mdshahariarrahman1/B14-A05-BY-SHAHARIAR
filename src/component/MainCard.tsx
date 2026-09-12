@@ -1,10 +1,19 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { DavType } from "../davStackType";
 
 interface DavCardType {
   dav: DavType;
+  davStackSelected:DavType[];
+  setdavStackSelected:Dispatch<SetStateAction<DavType[]>>
+
 }
 
-const MainCard = ({ dav }: DavCardType) => {
+const MainCard = ({ dav, davStackSelected, setdavStackSelected }: DavCardType) => {
+
+  const handelSelected = () =>{
+    setdavStackSelected([...davStackSelected, dav])
+  }
+
   return (
     <>
       <div className="flex h-full flex-col rounded-2xl border border-[#F1F5F9] bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -52,6 +61,7 @@ const MainCard = ({ dav }: DavCardType) => {
 
         {/* Button */}
         <button
+          onClick={handelSelected}
           className="mt-auto w-full rounded-lg bg-[#080d1d] py-3 text-sm font-medium text-white transition hover:bg-slate-800"
         >
           Add to Stack
