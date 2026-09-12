@@ -22,7 +22,7 @@ const Main = ({ DavStack }: DavPromiseType) => {
       </div>
 
       <div className=" col-span-3">
-        <Selected davStackSelected={davStackSelected} />
+        <Selected davStackSelected={davStackSelected} setdavStackSelected={setdavStackSelected} />
       </div>
 
     </div>
