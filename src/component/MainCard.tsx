@@ -81,7 +81,7 @@ const MainCard = ({
         {/* Button */}
         <button
           onClick={handelSelected}
-          className={`mt-auto w-full rounded-lg ${isSelected === true ? "bg-pink-200 border text-pink-500 font-bold" : "text-[#FFFFFF]"} bg-[#080d1d] py-3 text-sm font-medium transition `}
+          className={`mt-auto w-full rounded-lg ${isSelected === true ? "bg-pink-200 border text-pink-500 font-bold" : "text-[#FFFFFF]"} bg-[#080d1d] py-3 text-sm font-medium transition  cursor-pointer`}
           disabled={isSelected === true ? true : false}
         >
           {isSelected ? (
