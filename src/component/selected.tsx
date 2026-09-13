@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { DavType } from "../davStackType";
 import { IoCloseSharp } from "react-icons/io5";
+import { Bounce, toast } from "react-toastify";
 
 interface SelectedType {
   davStackSelected: DavType[];
@@ -12,10 +13,23 @@ const Selected = ({ davStackSelected, setdavStackSelected }: SelectedType) => {
     const newSelected = davStackSelected.filter((dav) => dav.id !== id);
 
     setdavStackSelected(newSelected);
+    toast.error(`${davStackSelected[0].name} removed from your stack!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   const handelRemoveAll = () => {
     setdavStackSelected([]);
+
+    toast.error(`removed all...`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   if (davStackSelected.length === 0) {
@@ -71,14 +85,14 @@ const Selected = ({ davStackSelected, setdavStackSelected }: SelectedType) => {
               </div>
             ))}
           </div>
-        <div className="text-center">
-          <button
-            onClick={handelRemoveAll}
-            className=" py-2 px-8 md:px-29 border border-[#D82C20] rounded-lg text-[14px] text-[#D82C20] font-semibold text-center cursor-pointer transition duration-300 hover:shadow shadow-[#D82C20]"
-          >
-            Remove All
-          </button>
-        </div>
+          <div className="text-center">
+            <button
+              onClick={handelRemoveAll}
+              className=" py-2 px-8 md:px-23 border border-[#D82C20] rounded-lg text-[14px] text-[#D82C20] font-semibold text-center cursor-pointer transition duration-300 hover:shadow shadow-[#D82C20]"
+            >
+              Remove All
+            </button>
+          </div>
         </div>
       </>
     );

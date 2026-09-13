@@ -3,7 +3,8 @@ import NavAndHeroSection from "./component/navAndHeroSection"
 import Main from "./component/main";
 import type { DavType } from "./davStackType";
 import Footer from "./component/Footer";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const DevStackDataPromis = async():Promise <DavType[]>=>{
@@ -28,6 +29,7 @@ function App() {
       </Suspense>
 
       <Footer/>
+      <ToastContainer/>
     </>
   )
 }

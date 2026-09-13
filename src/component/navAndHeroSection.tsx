@@ -72,7 +72,7 @@ const NavAndHeroSection = () => {
           </div>
 
           <div className="mt-10 md:mt-0">
-            <img src={bnanerImage} alt="" className=" w-auto h-74 md:w-auto" />
+            <img src={bnanerImage} alt="" className=" w-auto md:w-auto" />
           </div>
         </div>
       </section>

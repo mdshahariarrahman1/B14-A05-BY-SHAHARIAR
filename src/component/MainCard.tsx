@@ -1,5 +1,6 @@
 import { type Dispatch, type SetStateAction } from "react";
 import type { DavType } from "../davStackType";
+import { Bounce, toast } from "react-toastify";
 
 interface DavCardType {
   dav: DavType;
@@ -12,13 +13,24 @@ const MainCard = ({
   davStackSelected,
   setdavStackSelected,
 }: DavCardType) => {
-
   const selected = davStackSelected.filter((item) => item.id === dav.id);
 
   const isSelected = selected.length > 0;
 
   const handelSelected = () => {
     setdavStackSelected([...davStackSelected, dav]);
+    // toast.success(`${dav.name} added to your stack!`);
+    toast.success(`${dav.name} added to your stack!`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (
