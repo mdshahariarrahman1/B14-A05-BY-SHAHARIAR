@@ -24,7 +24,7 @@ const Selected = ({ davStackSelected, setdavStackSelected }: SelectedType) => {
   const handelRemoveAll = () => {
     setdavStackSelected([]);
 
-    toast.error(`removed all...`, {
+    toast.error(`removed all stack!..`, {
       position: "bottom-right",
       autoClose: 3000,
       theme: "light",
