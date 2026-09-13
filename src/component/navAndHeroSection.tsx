@@ -4,7 +4,7 @@ import { IoMenu } from "react-icons/io5";
 const NavAndHeroSection = () => {
   return (
     <>
-      <nav className="w-full px-4 py-3 mb-10 md:container md:mx-auto md:px-8 md:py-6 md:mb-24">
+      <nav className="sticky top-0 bg-white w-full px-4 py-3 mb-10 md:container md:mx-auto md:px-8 md:py-6 md:mb-24">
         <div className="flex items-center justify-between">
           <div className="md:hidden">
             <IoMenu className="text-[#64748B] text-2xl" />
@@ -72,7 +72,7 @@ const NavAndHeroSection = () => {
           </div>
 
           <div className="mt-10 md:mt-0">
-            <img src={bnanerImage} alt="" className="w-[280px] md:w-auto" />
+            <img src={bnanerImage} alt="" className=" w-auto h-74 md:w-auto" />
           </div>
         </div>
       </section>
