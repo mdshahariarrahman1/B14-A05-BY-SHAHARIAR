@@ -74,7 +74,7 @@ const Selected = ({ davStackSelected, setdavStackSelected }: SelectedType) => {
         <div className="text-center">
           <button
             onClick={handelRemoveAll}
-            className=" py-2 px-29 border border-[#D82C20] rounded-lg text-[14px] text-[#D82C20] font-semibold text-center cursor-pointer transition duration-300 hover:shadow shadow-[#D82C20]"
+            className=" py-2 px-8 md:px-29 border border-[#D82C20] rounded-lg text-[14px] text-[#D82C20] font-semibold text-center cursor-pointer transition duration-300 hover:shadow shadow-[#D82C20]"
           >
             Remove All
           </button>
